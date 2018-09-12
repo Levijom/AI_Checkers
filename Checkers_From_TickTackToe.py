@@ -4,22 +4,25 @@ import tkinter.messagebox
 tk = Tk()
 tk.title("Checkers")
 
-click = True
+clickX = True
+clickO = True
 
 def checker(buttons):
-         global click
-         if buttons["text"] == "X" and click == True:
+         global clickX
+         if buttons["text"] == "X" and clickX == True:
              buttons["text"] = " "
-             click = False
-         elif buttons["text"] == " " and click == False:
+             clickX = False
+         elif buttons["text"] == " " and clickX == False:
              buttons["text"] = "X"
-             click = True
-         elif buttons["text"] == "O" and click == True:
+             clickX = True
+             
+         global clickO
+         if buttons["text"] == "O" and clickO == True:
              buttons["text"] = " "
-             click = False
-         elif buttons["text"] == " " and click == False:
+             clickO = False
+         elif buttons["text"] == " " and clickO == False:
              buttons["text"] = "O"
-             click = True
+             clickO = True
 
 
 #Old Button Layout:
@@ -54,12 +57,12 @@ button1 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , 
 button1.grid(row=1, column=0,sticky = S+N+E+W)
 
 
-button2 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button2))
+button2 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button2))
 
 button2.grid(row=1, column=1,sticky = S+N+E+W)
 
 
-button3 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button3))
+button3 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button3))
 
 button3.grid(row=1, column=2,sticky = S+N+E+W)
 
@@ -79,7 +82,7 @@ button6 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , 
 button6.grid(row=1, column=5,sticky = S+N+E+W)
 
 
-button7 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button7))
+button7 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button7))
 
 button7.grid(row=1, column=6,sticky = S+N+E+W)
 
@@ -96,7 +99,7 @@ button9 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , 
 button9.grid(row=2, column=0,sticky = S+N+E+W)
 
 
-button10 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button10))
+button10 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button10))
 
 button10.grid(row=2, column=1,sticky = S+N+E+W)
 
@@ -116,7 +119,7 @@ button13 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button13.grid(row=2, column=4,sticky = S+N+E+W)
 
 
-button14 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button14))
+button14 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button14))
 
 button14.grid(row=2, column=5,sticky = S+N+E+W)
 
@@ -126,14 +129,14 @@ button15 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button15.grid(row=2, column=6,sticky = S+N+E+W)
 
 
-button16 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button16))
+button16 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button16))
 
 button16.grid(row=2, column=7,sticky = S+N+E+W)
 
 
 
 
-button17 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button17))
+button17 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button17))
 
 button17.grid(row=3, column=0,sticky = S+N+E+W)
 
@@ -143,7 +146,7 @@ button18 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button18.grid(row=3, column=1,sticky = S+N+E+W)
 
 
-button19 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button19))
+button19 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button19))
 
 button19.grid(row=3, column=2,sticky = S+N+E+W)
 
@@ -163,7 +166,7 @@ button22 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button22.grid(row=3, column=5,sticky = S+N+E+W)
 
 
-button23 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button23))
+button23 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button23))
 
 button23.grid(row=3, column=6,sticky = S+N+E+W)
 
@@ -180,7 +183,7 @@ button25 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button25.grid(row=4, column=0,sticky = S+N+E+W)
 
 
-button26 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button26))
+button26 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button26))
 
 button26.grid(row=4, column=1,sticky = S+N+E+W)
 
@@ -200,7 +203,7 @@ button29 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button29.grid(row=4, column=4,sticky = S+N+E+W)
 
 
-button30 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button30))
+button30 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button30))
 
 button30.grid(row=4, column=5,sticky = S+N+E+W)
 
@@ -210,14 +213,14 @@ button31 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button31.grid(row=4, column=6,sticky = S+N+E+W)
 
 
-button32 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button32))
+button32 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button32))
 
 button32.grid(row=4, column=7,sticky = S+N+E+W)
 
 
 
 
-button33 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button33))
+button33 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button33))
 
 button33.grid(row=5, column=0,sticky = S+N+E+W)
 
@@ -227,7 +230,7 @@ button34 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button34.grid(row=5, column=1,sticky = S+N+E+W)
 
 
-button35 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button35))
+button35 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button35))
 
 button35.grid(row=5, column=2,sticky = S+N+E+W)
 
@@ -247,7 +250,7 @@ button38 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button38.grid(row=5, column=5,sticky = S+N+E+W)
 
 
-button39 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button39))
+button39 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button39))
 
 button39.grid(row=5, column=6,sticky = S+N+E+W)
 
@@ -264,7 +267,7 @@ button41 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button41.grid(row=6, column=0,sticky = S+N+E+W)
 
 
-button42 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button42))
+button42 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button42))
 
 button42.grid(row=6, column=1,sticky = S+N+E+W)
 
@@ -284,7 +287,7 @@ button45 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button45.grid(row=6, column=4,sticky = S+N+E+W)
 
 
-button46 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button46))
+button46 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button46))
 
 button46.grid(row=6, column=5,sticky = S+N+E+W)
 
@@ -294,14 +297,14 @@ button47 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button47.grid(row=6, column=6,sticky = S+N+E+W)
 
 
-button48 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button48))
+button48 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button48))
 
 button48.grid(row=6, column=7,sticky = S+N+E+W)
 
 
 
 
-button49 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button49))
+button49 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button49))
 
 button49.grid(row=7, column=0,sticky = S+N+E+W)
 
@@ -311,7 +314,7 @@ button50 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button50.grid(row=7, column=1,sticky = S+N+E+W)
 
 
-button51 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button51))
+button51 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button51))
 
 button51.grid(row=7, column=2,sticky = S+N+E+W)
 
@@ -331,7 +334,7 @@ button54 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button54.grid(row=7, column=5,sticky = S+N+E+W)
 
 
-button55 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button55))
+button55 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button55))
 
 button55.grid(row=7, column=6,sticky = S+N+E+W)
 
@@ -348,7 +351,7 @@ button57 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button57.grid(row=8, column=0,sticky = S+N+E+W)
 
 
-button58 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button58))
+button58 = Button(tk,text="X",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button58))
 
 button58.grid(row=8, column=1,sticky = S+N+E+W)
 
@@ -368,7 +371,7 @@ button61 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button61.grid(row=8, column=4,sticky = S+N+E+W)
 
 
-button62 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button62))
+button62 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button62))
 
 button62.grid(row=8, column=5,sticky = S+N+E+W)
 
@@ -378,7 +381,7 @@ button63 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 ,
 button63.grid(row=8, column=6,sticky = S+N+E+W)
 
 
-button64 = Button(tk,text=" ",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button64))
+button64 = Button(tk,text="O",font = ('Times 26 bold'), height = 2 , width = 4 , command=lambda:checker(button64))
 
 button64.grid(row=8, column=7,sticky = S+N+E+W)
 
