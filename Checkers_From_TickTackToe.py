@@ -33,6 +33,7 @@ def checker(buttons):
 #   7   8   9
 
 #New Button Layout
+
 #   1   2   3   4   5   6   7   8
 
 #   9   10  11  12  13  14  15  16
@@ -48,6 +49,13 @@ def checker(buttons):
 #   49  50  51  52  53  54  55  56
 
 #   57  58  59  60  61  62  63  64
+
+#layout is determined by row & column
+
+
+
+#   if button.row % 2 & button.column % 2; no click
+#   if button.row %! 2 & button.column %! 2; no click
 
 
 buttons=StringVar()
